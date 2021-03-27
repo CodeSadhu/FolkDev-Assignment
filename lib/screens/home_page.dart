@@ -76,8 +76,8 @@ class HomePage extends StatelessWidget {
                     child: GridView.builder(
                       itemCount: roomImages.length,
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        childAspectRatio: 1.1,
-                        crossAxisSpacing: 30.0,
+                        childAspectRatio: 1.09,
+                        crossAxisSpacing: 35.0,
                         mainAxisSpacing: 20.0,
                         crossAxisCount: 2,
                       ),
@@ -85,14 +85,39 @@ class HomePage extends StatelessWidget {
                         return ClipRRect(
                           borderRadius: BorderRadius.all(Radius.circular(40.0)),
                           child: Card(
-                            elevation: 0.0,
-                            // color: Colors.white,
+                            elevation: 2.0,
+                            shadowColor: Colors.grey.withOpacity(0.1),
+                            color: Colors.white,
+                            semanticContainer: false,
                             child: Stack(
                               children: [
                                 Positioned(
-                                  top: 0.0,
-                                  left: 5.0,
+                                  top: 20.0,
+                                  left: 20.0,
                                   child: SvgPicture.asset(roomImages[index], height: 50.0),
+                                ),
+                                Positioned(
+                                  top: 80.0,
+                                  left: 20.0,
+                                  child: Text(
+                                    roomTypes[index],
+                                    style: TextStyle(
+                                      fontSize: 18.0,
+                                      // fontWeight: FontWeight.w800
+                                    ),
+                                  ),
+                                ),
+                                Positioned(
+                                  top: 110.0,
+                                  left: 20.0,
+                                  child: Text(
+                                    lightCounts[index],
+                                    style: TextStyle(
+                                      fontSize: 14.0,
+                                      color: yellowTheme,
+                                      // fontWeight: FontWeight.w800
+                                    ),
+                                  ),
                                 ),
                               ],
                             ),
