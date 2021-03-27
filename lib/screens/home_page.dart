@@ -64,38 +64,18 @@ class HomePage extends StatelessWidget {
                   top: 20.0,
                   left: 25.0,
                   child: Text(
-                    'All Rooms', style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold)
+                    'All Rooms', style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold, color: darkBlueTheme)
                   ),
                 ),
-                Positioned(
-                  child: GridView(
-                    padding: EdgeInsets.all(100.0),
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      childAspectRatio: 0.9,
-                      // mainAxisExtent: 50.0,
-                      crossAxisSpacing: 30.0,
-                      mainAxisSpacing: 5.0,
-                    ),
-                    children: [
-                      Container(
-                        height: 20.0,
-                        child: SvgPicture.asset(
-                          'assets/bed.svg',
-                          fit: BoxFit.fill,
-                        ),
-                      ),
-                      Container(
-                        height: 20.0,
-                        color: Color(0xFFFFFFF),
-                        child: SvgPicture.asset(
-                          'assets/bed.svg',
-                          fit: BoxFit.fill,
-                        ),
-                      ),
-                    ],
+                GridView.builder(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    childAspectRatio: 0.9,
+                    crossAxisCount: 2
                   ),
-                ),
+                  itemBuilder: (context, index) {
+                    
+                  }
+                )
               ],
             ),
           ),

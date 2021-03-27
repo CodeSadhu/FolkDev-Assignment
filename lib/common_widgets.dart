@@ -2,6 +2,54 @@ import 'package:flutter/material.dart';
 
 Color appBackgroundColor = Color(0xFF0A4DA2);
 Color popUpBackground = Color(0xFFF6F8FB);
+Color yellowTheme = Color(0xFFFFA939);
+Color darkBlueTheme = Color(0xFF002D67);
+
+final TextStyle yellowText = TextStyle(
+  color: yellowTheme,
+);
+
+final TextStyle darkBlueText = TextStyle(
+  color: darkBlueTheme,
+);
+
+List<String> roomImages = [
+  'assets/bed.svg',
+  'assets/room.svg',
+  'assets/kitchen.svg',
+  'assets/bathtube.svg',
+  'assets/house.svg',
+  'assets/balcony.svg'
+];
+
+List<String> roomTypes = [
+  'Bed room',
+  'Living room',
+  'Kitchen',
+  'Bathroom',
+  'Outdoor',
+  'Balcony'
+];
+
+List<String> lightCounts = [
+  '4 Lights',
+  '2 Lights',
+  '5 Lights',
+  '1 Lights',
+  '5 Lights',
+  '2 Lights',
+];
+class HomePageGridView {
+  final String gridImage;
+  final String roomType;
+  final String lightCount;
+
+  HomePageGridView({
+    this.gridImage,
+    this.roomType,
+    this.lightCount
+  });
+}
 
 class SizeConfig {
   static MediaQueryData _mediaQueryData;
