@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:folkdev_assignment/screens/home_page.dart';
+import 'package:folkdev_assignment/screens/main_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,7 +12,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      home: HomePage()
+      theme: ThemeData(
+        fontFamily: "Muli"
+      ),
+      home: MainPage()
     );
   }
 }
