@@ -67,14 +67,40 @@ class HomePage extends StatelessWidget {
                     'All Rooms', style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold, color: darkBlueTheme)
                   ),
                 ),
-                GridView.builder(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    childAspectRatio: 0.9,
-                    crossAxisCount: 2
+                Positioned(
+                  top: 30.0,
+                  child: Container(
+                    height: SizeConfig.blockSizeVertical * 70,
+                    width: SizeConfig.blockSizeHorizontal * 99,
+                    padding: EdgeInsets.symmetric(horizontal: 20.0),
+                    child: GridView.builder(
+                      itemCount: roomImages.length,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        childAspectRatio: 1.1,
+                        crossAxisSpacing: 30.0,
+                        mainAxisSpacing: 20.0,
+                        crossAxisCount: 2,
+                      ),
+                      itemBuilder: (context, index) {
+                        return ClipRRect(
+                          borderRadius: BorderRadius.all(Radius.circular(40.0)),
+                          child: Card(
+                            elevation: 0.0,
+                            // color: Colors.white,
+                            child: Stack(
+                              children: [
+                                Positioned(
+                                  top: 0.0,
+                                  left: 5.0,
+                                  child: SvgPicture.asset(roomImages[index], height: 50.0),
+                                ),
+                              ],
+                            ),
+                          ),
+                        );
+                      }
+                    ),
                   ),
-                  itemBuilder: (context, index) {
-                    
-                  }
                 )
               ],
             ),
