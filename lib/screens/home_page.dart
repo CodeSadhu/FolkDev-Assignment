@@ -14,13 +14,13 @@ class HomePage extends StatelessWidget {
     child: Stack(
       children: [
         Positioned(
-          left: -220.0,
-          top: 10.0,
+          left: -160.0,
+          top: -140.0,
           child: Transform.rotate(
-            angle: 42.9,
+            angle: -49.5,
             child: SvgPicture.asset(
               'assets/Circles.svg',
-              height: 500.0,
+              height: 550.0,
               fit: BoxFit.fill,
               color: Colors.white,
             ),
