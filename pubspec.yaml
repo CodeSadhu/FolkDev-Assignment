@@ -53,6 +53,7 @@ flutter:
     - assets/house.svg
     - assets/bathtube.svg
     - assets/balcony.svg
+    - assets/back-arrow.svg
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -66,8 +67,10 @@ flutter:
   fonts:
     - family: Muli
       fonts:
-        # - asset: assets/fonts/Muli-SemiBold.ttf
         - asset: assets/fonts/Muli-Bold.ttf
+    - family: Gramatika
+      fonts:
+        - asset: assets/fonts/Gramatika-Bold.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
