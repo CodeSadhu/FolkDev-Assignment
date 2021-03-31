@@ -50,7 +50,48 @@ class _BedRoomState extends State<BedRoom> {
                   fontSize: 28.0,
                 ),
               ),
-            )
+            ),
+            Positioned(
+              left: 30.0,
+              top: 95.0,
+              child: Text(
+                'Room',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 28.0,
+                ),
+              ),
+            ),
+            Positioned(
+              left: 30.0,
+              top: 130.0,
+              child: Text(
+                '4 Lights',
+                style: TextStyle(
+                  color: Colors.yellow[600],
+                  fontSize: 18.0,
+                ),
+              ),
+            ),
+            Positioned(
+              right: 120.0,
+              top: 112.0,
+              child: Container(
+                height: 20.0,
+                width: 20.0,
+                decoration: BoxDecoration(
+                  color: Colors.yellow,
+                  shape: BoxShape.circle
+                ),
+              ),
+            ),
+            Positioned(
+              right: 60.0,
+              top: 0.0,
+              child: SvgPicture.asset(
+                'assets/lamp.svg',
+              ),
+            ),
           ],
         ),
       ),
