@@ -64,7 +64,7 @@ class _BedRoomState extends State<BedRoom> {
             ),
             Positioned(
               left: 30.0,
-              top: 130.0,
+              top: 140.0,
               child: Text(
                 '4 Lights',
                 style: TextStyle(
@@ -90,6 +90,96 @@ class _BedRoomState extends State<BedRoom> {
               top: 0.0,
               child: SvgPicture.asset(
                 'assets/lamp.svg',
+              ),
+            ),
+            Positioned(
+              top: 190.0,
+              right: 20.0,
+              left: 20.0,
+              child: Container(
+                height: 60.0,
+                width: SizeConfig.blockSizeHorizontal * 90,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    Card(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(13.0)
+                      ),
+                      child: Container(
+                        height: 60.0,
+                        width: 130.0,
+                        padding: EdgeInsets.only(left: 10.0, right: 10.0),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            SizedBox(width: 5.0),
+                            SvgPicture.asset('assets/surface1.svg', height: 19.0),
+                            SizedBox(width: 5.0),
+                            Text("Main Light", style: TextStyle(fontSize: 14.0, color: darkBlueTheme)),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 10.0),
+                    Card(
+                      color: Color(0xFF093B7B),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(13.0)
+                      ),
+                      child: Container(
+                        height: 60.0,
+                        width: 130.0,
+                        padding: EdgeInsets.symmetric(horizontal: 10.0),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            SizedBox(width: 5.0),
+                            SvgPicture.asset('assets/desk-light.svg', height: 19.0),
+                            SizedBox(width: 5.0),
+                            Text("Desk Lights", style: TextStyle(fontSize: 14.0, color: Colors.white)),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 10.0),
+                    Card(
+                      // color: Color(0xFF093B7B),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(13.0)
+                      ),
+                      child: Container(
+                        height: 60.0,
+                        width: 130.0,
+                        padding: EdgeInsets.symmetric(horizontal: 10.0),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            SizedBox(width: 5.0),
+                            SvgPicture.asset('assets/bedIcon.svg', height: 19.0),
+                            SizedBox(width: 5.0),
+                            Text("Bed Lights", style: TextStyle(fontSize: 14.0)),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Positioned(
+              top: 280.0,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: popUpBackground,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(30.0),
+                    topRight: Radius.circular(30.0),
+                  )
+                ),
+                height: SizeConfig.blockSizeVertical * 70,
+                width: SizeConfig.blockSizeHorizontal * 100,
+                child: Center(child: Text("Stuff here")),
               ),
             ),
           ],

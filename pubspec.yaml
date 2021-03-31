@@ -55,6 +55,10 @@ flutter:
     - assets/balcony.svg
     - assets/back-arrow.svg
     - assets/lamp.svg
+    - assets/surface1.svg
+    - assets/surface2.svg
+    - assets/bedIcon.svg
+    - assets/desk-light.svg
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
