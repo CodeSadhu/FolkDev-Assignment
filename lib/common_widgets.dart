@@ -49,6 +49,26 @@ List<Color> lampColors = [
   Color(0xFFEBD094),
 ];
 
+List<String> sceneGridNames = [
+  'Birthday',
+  'Party',
+  'Relax',
+  'Fun'
+];
+
+List<String> sceneGridIcons = [
+  'assets/surface1.svg',
+  'assets/surface1.svg',
+  'assets/surface1.svg',
+  'assets/surface1.svg',
+];
+
+List<Color> sceneGridColors = [
+  Color(0xFFFF9B9B),
+  Color(0xFFA594EB),
+  Color(0xFF94CAEB),
+  Color(0xFF94EB9E),
+];
 class HomePageGridView {
   final String gridImage;
   final String roomType;

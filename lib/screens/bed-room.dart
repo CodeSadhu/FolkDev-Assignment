@@ -330,6 +330,63 @@ class _BedRoomState extends State<BedRoom> {
                         ),
                       ),
                     ),
+                    Positioned(
+                      top: 200.0,
+                      left: 20.0,
+                      child: Text(
+                        'Scenes',
+                        style: TextStyle(
+                          fontSize: SizeConfig.blockSizeVertical * 2.5,
+                          color: darkBlueTheme
+                        )
+                      ),
+                    ),
+                    Positioned(
+                      top: 240.0,
+                      left: 20.0,
+                      child: Container(
+                        height: SizeConfig.blockSizeVertical * 20,
+                        width: SizeConfig.blockSizeHorizontal * 90,
+                        // color: Colors.red,
+                        padding: EdgeInsets.all(0.0),
+                        child: GridView.builder(
+                          padding: EdgeInsets.all(0.0),
+                          itemCount: sceneGridIcons.length,
+                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                            childAspectRatio: 2.9,
+                            crossAxisSpacing: 10.0,
+                            crossAxisCount: 2,
+                            mainAxisSpacing: 15.0
+                          ),
+                          itemBuilder: (context, index) {
+                            return Container(
+                              // height: SizeConfig.blockSizeVertical * 20,
+                              // width: SizeConfig.blockSizeHorizontal * 40,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15.0),
+                                color: sceneGridColors[index]
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  SvgPicture.asset(
+                                    sceneGridIcons[index],
+                                    color: Colors.white,
+                                  ),
+                                  SizedBox(width: 10.0),
+                                  Text(
+                                    sceneGridNames[index],
+                                    style: TextStyle(
+                                      color: Colors.white
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
