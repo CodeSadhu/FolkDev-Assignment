@@ -71,7 +71,7 @@ class HomePage extends StatelessWidget {
                     child: GridView.builder(
                       itemCount: roomImages.length,
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        childAspectRatio: 1.09,
+                        childAspectRatio: 1.02,
                         crossAxisSpacing: 35.0,
                         mainAxisSpacing: 20.0,
                         crossAxisCount: 2,
@@ -94,7 +94,7 @@ class HomePage extends StatelessWidget {
                                   Positioned(
                                     top: 20.0,
                                     left: 20.0,
-                                    child: SvgPicture.asset(roomImages[index], height: 50.0),
+                                    child: SvgPicture.asset(roomImages[index], height: SizeConfig.blockSizeVertical * 6.5),
                                   ),
                                   Positioned(
                                     top: 80.0,
