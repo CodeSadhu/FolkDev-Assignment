@@ -57,8 +57,11 @@ flutter:
     - assets/lamp.svg
     - assets/surface1.svg
     - assets/surface2.svg
+    - assets/solution2.svg
+    - assets/solution.svg
     - assets/bedIcon.svg
     - assets/desk-light.svg
+    - assets/power-icon.svg
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

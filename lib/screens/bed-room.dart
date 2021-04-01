@@ -8,6 +8,12 @@ class BedRoom extends StatefulWidget {
 }
 
 class _BedRoomState extends State<BedRoom> {
+
+  double _sliderValue = 0.0;
+  bool lightBulb = false;
+  int yellowBrightness = 900;
+  bool lampBright = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,10 +83,11 @@ class _BedRoomState extends State<BedRoom> {
               right: 120.0,
               top: 112.0,
               child: Container(
-                height: 20.0,
-                width: 20.0,
+                height: SizeConfig.blockSizeVertical * 2.5,
+                width: SizeConfig.blockSizeHorizontal * 5,
                 decoration: BoxDecoration(
-                  color: Colors.yellow,
+                  // color: lampBright ? Colors.yellow[yellowBrightness] : appBackgroundColor,
+                  color: Colors.yellow[600],
                   shape: BoxShape.circle
                 ),
               ),
@@ -94,10 +101,11 @@ class _BedRoomState extends State<BedRoom> {
             ),
             Positioned(
               top: 190.0,
-              right: 20.0,
-              left: 20.0,
+              right: 0.0,
+              left: 0.0,
               child: Container(
                 height: 60.0,
+                padding: EdgeInsets.only(left: 10.0),
                 width: SizeConfig.blockSizeHorizontal * 90,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
@@ -179,7 +187,105 @@ class _BedRoomState extends State<BedRoom> {
                 ),
                 height: SizeConfig.blockSizeVertical * 70,
                 width: SizeConfig.blockSizeHorizontal * 100,
-                child: Center(child: Text("Stuff here")),
+                child: Stack(
+                  children: [
+                    Positioned(
+                      top: 20.0,
+                      left: 20.0,
+                      child: Text(
+                        'Intensity',
+                        style: TextStyle(
+                          fontSize: 20.0,
+                          color: darkBlueTheme
+                        )
+                      ),
+                    ),
+                    Positioned(
+                      top: 65.0,
+                      left: 30.0,
+                      child: SvgPicture.asset(
+                        'assets/solution2.svg'
+                      ),
+                    ),
+                    lightBulb ? Positioned(
+                      top: 60.0,
+                      right: 30.0,
+                      child: SvgPicture.asset(
+                        'assets/solution.svg'
+                      ),
+                    ) : Positioned(
+                      top: 65.0,
+                      right: 30.0,
+                      child: SvgPicture.asset(
+                        'assets/solution2.svg'
+                      ),
+                    ),
+                    Positioned(
+                      top: 50.0,
+                      left: 50.0,
+                      child: SliderTheme(
+                        data: SliderThemeData(
+                          thumbColor: Colors.white,
+                          trackHeight: 1.5,
+                          trackShape: RoundedRectSliderTrackShape(),
+                          activeTrackColor: Colors.yellow[600],
+                          minThumbSeparation: 20.0,
+                        ),
+                        child: Container(
+                          width: SizeConfig.blockSizeHorizontal * 77,
+                          child: Slider(
+                            min: 0,
+                            max: 100.0,
+                            value: _sliderValue,
+                            onChanged: (val) {
+                              setState(() {
+                                _sliderValue = val;
+                              });
+                              if (_sliderValue >= 60.0) {
+                                setState(() {
+                                  lightBulb = true;
+                                });
+                              }
+                              else lightBulb = false;
+                              if (_sliderValue >= 30) {
+                                setState(() {
+                                  lampBright = true;
+                                  yellowBrightness -= 100;
+                                });
+                              }
+                              else if (_sliderValue < 30) {
+                                setState(() {
+                                  lampBright = false;
+                                  yellowBrightness += 100;
+                                });
+                              }
+                            },
+                            divisions: 6,
+                            inactiveColor: Colors.grey[600],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Positioned(
+              top: 265.0,
+              right: 20.0,
+              child: Container(
+                height: 35.0,
+                width: 35.0,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  shape: BoxShape.circle
+                ),
+                child: Center(
+                  child: SvgPicture.asset(
+                    'assets/power-icon.svg',
+                    height: 20.0,
+                  ),
+                ),
               ),
             ),
           ],
