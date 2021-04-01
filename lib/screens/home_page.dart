@@ -33,7 +33,7 @@ class HomePage extends StatelessWidget {
             width: 110,
             child: Text(
               'Control Panel',
-              style: TextStyle(fontSize: 28.0, color: Colors.white)
+              style: TextStyle(fontSize: SizeConfig.blockSizeVertical * 3.5, color: Colors.white)
             ),
           ),
         ),
@@ -102,7 +102,7 @@ class HomePage extends StatelessWidget {
                                     child: Text(
                                       roomTypes[index],
                                       style: TextStyle(
-                                        fontSize: 18.0,
+                                        fontSize: SizeConfig.blockSizeVertical * 2.2,
                                         // fontWeight: FontWeight.w800
                                       ),
                                     ),
@@ -113,7 +113,7 @@ class HomePage extends StatelessWidget {
                                     child: Text(
                                       lightCounts[index],
                                       style: TextStyle(
-                                        fontSize: 14.0,
+                                        fontSize: SizeConfig.blockSizeVertical * 1.7,
                                         color: yellowTheme,
                                         // fontWeight: FontWeight.w800
                                       ),
@@ -132,7 +132,7 @@ class HomePage extends StatelessWidget {
                   top: 20.0,
                   left: 25.0,
                   child: Text(
-                    'All Rooms', style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold, color: darkBlueTheme)
+                    'All Rooms', style: TextStyle(fontSize: SizeConfig.blockSizeVertical * 2.5, fontWeight: FontWeight.bold, color: darkBlueTheme)
                   ),
                 ),
               ],

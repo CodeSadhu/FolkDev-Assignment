@@ -55,6 +55,7 @@ flutter:
     - assets/balcony.svg
     - assets/back-arrow.svg
     - assets/lamp.svg
+    - assets/plus.svg
     - assets/surface1.svg
     - assets/surface2.svg
     - assets/solution2.svg

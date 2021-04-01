@@ -39,6 +39,16 @@ List<String> lightCounts = [
   '5 Lights',
   '2 Lights',
 ];
+
+List<Color> lampColors = [
+  Color(0xFFFF9B9B),
+  Color(0xFF94EB9E),
+  Color(0xFF94CAEB),
+  Color(0xFFA594EB),
+  Color(0xFFDE94EB),
+  Color(0xFFEBD094),
+];
+
 class HomePageGridView {
   final String gridImage;
   final String roomType;

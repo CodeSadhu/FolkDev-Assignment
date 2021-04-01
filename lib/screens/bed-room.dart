@@ -14,6 +14,8 @@ class _BedRoomState extends State<BedRoom> {
   int yellowBrightness = 900;
   bool lampBright = false;
 
+  Color lampColor = Colors.yellow[600];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,7 +55,7 @@ class _BedRoomState extends State<BedRoom> {
                 'Bed',
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 28.0,
+                  fontSize: SizeConfig.blockSizeVertical * 3.5,
                 ),
               ),
             ),
@@ -64,7 +66,7 @@ class _BedRoomState extends State<BedRoom> {
                 'Room',
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 28.0,
+                  fontSize: SizeConfig.blockSizeVertical * 3.5,
                 ),
               ),
             ),
@@ -75,7 +77,7 @@ class _BedRoomState extends State<BedRoom> {
                 '4 Lights',
                 style: TextStyle(
                   color: Colors.yellow[600],
-                  fontSize: 18.0,
+                  fontSize: SizeConfig.blockSizeVertical * 2.2,
                 ),
               ),
             ),
@@ -87,7 +89,7 @@ class _BedRoomState extends State<BedRoom> {
                 width: SizeConfig.blockSizeHorizontal * 5,
                 decoration: BoxDecoration(
                   // color: lampBright ? Colors.yellow[yellowBrightness] : appBackgroundColor,
-                  color: Colors.yellow[600],
+                  color: lampColor,
                   shape: BoxShape.circle
                 ),
               ),
@@ -124,7 +126,7 @@ class _BedRoomState extends State<BedRoom> {
                             SizedBox(width: 5.0),
                             SvgPicture.asset('assets/surface1.svg', height: 19.0),
                             SizedBox(width: 5.0),
-                            Text("Main Light", style: TextStyle(fontSize: 14.0, color: darkBlueTheme)),
+                            Text("Main Light", style: TextStyle(fontSize: SizeConfig.blockSizeVertical * 1.7, color: darkBlueTheme)),
                           ],
                         ),
                       ),
@@ -145,7 +147,7 @@ class _BedRoomState extends State<BedRoom> {
                             SizedBox(width: 5.0),
                             SvgPicture.asset('assets/desk-light.svg', height: 19.0),
                             SizedBox(width: 5.0),
-                            Text("Desk Lights", style: TextStyle(fontSize: 14.0, color: Colors.white)),
+                            Text("Desk Lights", style: TextStyle(fontSize: SizeConfig.blockSizeVertical * 1.7, color: Colors.white)),
                           ],
                         ),
                       ),
@@ -166,7 +168,7 @@ class _BedRoomState extends State<BedRoom> {
                             SizedBox(width: 5.0),
                             SvgPicture.asset('assets/bedIcon.svg', height: 19.0),
                             SizedBox(width: 5.0),
-                            Text("Bed Lights", style: TextStyle(fontSize: 14.0)),
+                            Text("Bed Lights", style: TextStyle(fontSize: SizeConfig.blockSizeVertical * 1.7)),
                           ],
                         ),
                       ),
@@ -195,7 +197,7 @@ class _BedRoomState extends State<BedRoom> {
                       child: Text(
                         'Intensity',
                         style: TextStyle(
-                          fontSize: 20.0,
+                          fontSize: SizeConfig.blockSizeVertical * 2.5,
                           color: darkBlueTheme
                         )
                       ),
@@ -262,6 +264,68 @@ class _BedRoomState extends State<BedRoom> {
                             },
                             divisions: 6,
                             inactiveColor: Colors.grey[600],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      top: 100.0,
+                      left: 20.0,
+                      child: Text(
+                        'Colors',
+                        style: TextStyle(
+                          fontSize: SizeConfig.blockSizeVertical * 2.5,
+                          color: darkBlueTheme
+                        )
+                      ),
+                    ),
+                    Positioned(
+                      top: 140.0,
+                      left: 20.0,
+                      child: Container(
+                        height: SizeConfig.blockSizeVertical * 6,
+                        width: SizeConfig.blockSizeHorizontal * 80,
+                        child: ListView.custom(
+                          scrollDirection: Axis.horizontal,
+                          childrenDelegate: SliverChildBuilderDelegate(
+                            (BuildContext context, int index) {
+                              return Row(
+                                children: [
+                                  InkWell(
+                                    child: Container(
+                                      height: SizeConfig.blockSizeVertical * 5,
+                                      width: SizeConfig.blockSizeHorizontal * 8,
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: lampColors[index],
+                                      ),
+                                    ),
+                                    onTap: () {
+                                      setState(() {
+                                        lampColor = lampColors[index];
+                                      });
+                                    },
+                                  ),
+                                  SizedBox(width: 15.0),
+                                  (index == lampColors.length - 1)
+                                  ? Container(
+                                    height: SizeConfig.blockSizeVertical * 5,
+                                    width: SizeConfig.blockSizeHorizontal * 8,
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: Colors.white,
+                                    ),
+                                    child: Center(
+                                      child: SvgPicture.asset(
+                                        'assets/plus.svg',
+                                      ),
+                                    ),
+                                  )
+                                  : Container(),
+                                ],
+                              );
+                            },
+                            childCount: lampColors.length
                           ),
                         ),
                       ),
